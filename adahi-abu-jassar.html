@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أضاحي أبو جسار - جدة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #f5f0e8;
+      color: #2d2d2d;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    .header {
+      background: linear-gradient(135deg, #1a6b3a 0%, #2e9950 50%, #1a6b3a 100%);
+      padding: 40px 20px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0; right: 0;
+      height: 50px;
+      background: #f5f0e8;
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      font-size: 13px;
+      padding: 5px 18px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+      letter-spacing: 1px;
+    }
+
+    .header h1 {
+      color: #fff;
+      font-size: 38px;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 6px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .header h1 span {
+      color: #f9d84a;
+    }
+
+    .header p {
+      color: rgba(255,255,255,0.85);
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+
+    .header-sheep {
+      font-size: 52px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .location-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    /* SECTION */
+    .section-title {
+      text-align: center;
+      padding: 36px 20px 10px;
+    }
+
+    .section-title h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #1a6b3a;
+    }
+
+    .section-title p {
+      color: #666;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      padding: 16px 16px 0;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+
+    .card:active { transform: scale(0.97); }
+
+    .card-emoji {
+      background: linear-gradient(135deg, #e8f5ee, #d0ead8);
+      font-size: 54px;
+      text-align: center;
+      padding: 22px 10px 16px;
+    }
+
+    .card-body {
+      padding: 14px 14px 16px;
+    }
+
+    .card-body h3 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    .card-desc {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: 900;
+      color: #1a6b3a;
+    }
+
+    .price span {
+      font-size: 12px;
+      font-weight: 600;
+      color: #888;
+    }
+
+    .card-btn {
+      background: #1a6b3a;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 7px 14px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    /* FULL WIDTH CARD */
+    .card-full {
+      max-width: 500px;
+      margin: 14px 16px 0;
+    }
+
+    .card-full-inner {
+      background: linear-gradient(135deg, #1a6b3a, #2e9950);
+      border-radius: 18px;
+      padding: 22px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 4px 18px rgba(26,107,58,0.3);
+    }
+
+    .card-full-emoji { font-size: 50px; }
+
+    .card-full-text h3 {
+      color: #fff;
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .card-full-text p {
+      color: rgba(255,255,255,0.8);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .card-full-price {
+      color: #f9d84a;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .card-full-price span { font-size: 13px; font-weight: 600; }
+
+    /* CTA SECTION */
+    .cta-section {
+      padding: 30px 16px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .cta-title {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 16px;
+    }
+
+    .btn-whatsapp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #25d366;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 16px;
+      padding: 18px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-whatsapp:active {
+      transform: scale(0.97);
+      box-shadow: 0 3px 10px rgba(37,211,102,0.3);
+    }
+
+    .btn-whatsapp svg { width: 24px; height: 24px; fill: #fff; flex-shrink: 0; }
+
+    .btn-call {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #fff;
+      color: #1a6b3a;
+      text-decoration: none;
+      border-radius: 16px;
+      padding: 16px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      border: 2px solid #1a6b3a;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    /* FEATURES */
+    .features {
+      padding: 0 16px 10px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .feature-item {
+      background: #fff;
+      border-radius: 14px;
+      padding: 16px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .feature-icon { font-size: 26px; }
+
+    .feature-text { font-size: 13px; font-weight: 700; color: #2d2d2d; line-height: 1.3; }
+
+    /* FOOTER */
+    .footer {
+      background: #1a1a1a;
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+      margin-top: 30px;
+    }
+
+    .footer strong { color: #fff; }
+
+    /* STICKY BOTTOM */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: #25d366;
+      padding: 12px 16px;
+      z-index: 100;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+    }
+
+    .sticky-bar a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Cairo', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .sticky-bar svg { width: 22px; height: 22px; fill: #fff; }
+
+    .pb-safe { height: 80px; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <span class="header-sheep">🐑</span>
+    <div class="header-badge">عروض عيد الأضحى ١٤٤٦</div>
+    <h1>أضاحي <span>أبو جسار</span></h1>
+    <p>خرفان وغنم طازجة بأفضل الأسعار</p>
+    <div class="location-tag">
+      <span>📍</span>
+      <span>جدة</span>
+    </div>
+  </div>
+
+  <!-- SECTION TITLE -->
+  <div class="section-title">
+    <h2>اختر أضحيتك</h2>
+    <p>جميع الأضاحي معاينة ومضمونة</p>
+  </div>
+
+  <!-- ANIMAL CARDS -->
+  <div class="cards">
+    <div class="card">
+      <div class="card-emoji">🐑</div>
+      <div class="card-body">
+        <h3>خروف صغير</h3>
+        <div class="card-desc">مناسب للعائلة الصغيرة</div>
+        <div class="price-row">
+          <div class="price">٩٠٠ <span>ريال</span></div>
+          <a class="card-btn" href="https://wa.me/966561181116?text=السلام%20عليكم%20أبو%20جسار%2C%20أريد%20الاستفسار%20عن%20خروف%20صغير">احجز</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-emoji">🐏</div>
+      <div class="card-body">
+        <h3>خروف متوسط</h3>
+        <div class="card-desc">الأكثر طلباً للعائلات</div>
+        <div class="price-row">
+          <div class="price">١٣٠٠ <span>ريال</span></div>
+          <a class="card-btn" href="https://wa.me/966561181116?text=السلام%20عليكم%20أبو%20جسار%2C%20أريد%20الاستفسار%20عن%20خروف%20متوسط">احجز</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-emoji">🐑</div>
+      <div class="card-body">
+        <h3>خروف كبير</h3>
+        <div class="card-desc">للعائلات الكبيرة</div>
+        <div class="price-row">
+          <div class="price">١٨٠٠ <span>ريال</span></div>
+          <a class="card-btn" href="https://wa.me/966561181116?text=السلام%20عليكم%20أبو%20جسار%2C%20أريد%20الاستفسار%20عن%20خروف%20كبير">احجز</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-emoji">🐏</div>
+      <div class="card-body">
+        <h3>كبش مميز</h3>
+        <div class="card-desc">حجم ممتاز ووزن عالي</div>
+        <div class="price-row">
+          <div class="price">٢٥٠٠ <span>ريال</span></div>
+          <a class="card-btn" href="https://wa.me/966561181116?text=السلام%20عليكم%20أبو%20جسار%2C%20أريد%20الاستفسار%20عن%20كبش%20مميز">احجز</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FULL WIDTH SPECIAL OFFER -->
+  <div class="card-full" style="max-width:500px; margin: 14px auto 0; padding: 0 16px;">
+    <div class="card-full-inner">
+      <div class="card-full-emoji">⭐</div>
+      <div class="card-full-text">
+        <h3>عرض خاص — الكميات</h3>
+        <p>حجز أكثر من أضحية؟ تواصل للحصول على سعر مخصص</p>
+        <a href="https://wa.me/966561181116?text=السلام%20عليكم%20أبو%20جسار%2C%20أريد%20الاستفسار%20عن%20عرض%20الكميات"
+           style="color:#f9d84a; font-weight:800; font-size:14px; text-decoration:none;">
+          تواصل الآن ←
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="features" style="padding-top: 24px;">
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">✅</div>
+        <div class="feature-text">أضاحي معاينة ومضمونة</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🚚</div>
+        <div class="feature-text">توصيل داخل جدة</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">📅</div>
+        <div class="feature-text">حجز مسبق متاح</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">💬</div>
+        <div class="feature-text">رد سريع على واتساب</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA SECTION -->
+  <div class="cta-section">
+    <div class="cta-title">تواصل مع أبو جسار</div>
+
+    <a class="btn-whatsapp"
+       href="https://wa.me/966561181116?text=السلام%20عليكم%20أبو%20جسار%2C%20أريد%20الاستفسار%20عن%20الأضاحي">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      احجز على واتساب
+    </a>
+
+    <a class="btn-call" href="tel:+966561181116">
+      📞 اتصل الآن — 0561181116
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <strong>أضاحي أبو جسار</strong> · جدة · عيد الأضحى ١٤٤٦
+  </div>
+
+  <div class="pb-safe"></div>
+
+  <!-- STICKY WHATSAPP BAR -->
+  <div class="sticky-bar">
+    <a href="https://wa.me/966561181116?text=السلام%20عليكم%20أبو%20جسار%2C%20أريد%20الاستفسار%20عن%20الأضاحي">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      احجز أضحيتك الآن
+    </a>
+  </div>
+
+</body>
+</html>
